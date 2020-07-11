@@ -1,0 +1,35 @@
+import pymysql
+
+
+#This line is for connecting python to mysql
+myDB = pymysql.connect(host="127.0.0.1", user="root", passwd="f9d0s-jooN", db="tweetdb")
+
+#Location of the file in my computer
+cur = myDB.cursor()
+
+wordsToDB = "insert into ngram (gram) values (%s);"
+####UNIGRAM INTO N-GRAM####
+cur.execute("SELECT DISTINCT one_word1 FROM unigram")
+words = cur.fetchall()
+for word in words:
+	cur.execute(wordsToDB, [word])
+
+####BIGRAM INTO N-GRAM####
+cur.execute("SELECT DISTINCT two_word FROM bigram")
+words = cur.fetchall()
+for word in words:
+	cur.execute(wordsToDB, [word])
+
+####TRIGRAM INTO N-GRAM####
+cur.execute("SELECT DISTINCT three_word FROM trigram")
+words = cur.fetchall()
+for word in words:
+	cur.execute(wordsToDB, [word])
+
+####QUADRAGRAM INTO N-GRAM####
+cur.execute("SELECT DISTINCT four_word FROM quadragram")
+words = cur.fetchall()
+for word in words:
+	cur.execute(wordsToDB, [word])
+
+myDB.commit()

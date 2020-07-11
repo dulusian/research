@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     classification
+Instances:    1547
+Attributes:   158405
+              [list of attributes omitted]
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1449.02 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 10.51 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        1547              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0856
+Root mean squared error                  0.1317
+Relative absolute error                 36.397  %
+Root relative squared error             38.4342 %
+Total Number of Instances             1547     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     1
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     2
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     3
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     4
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     5
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     6
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   <-- classified as
+ 491   0   0   0   0   0 |   a = 1
+   0 633   0   0   0   0 |   b = 2
+   0   0  76   0   0   0 |   c = 3
+   0   0   0 224   0   0 |   d = 4
+   0   0   0   0  89   0 |   e = 5
+   0   0   0   0   0  34 |   f = 6
+
